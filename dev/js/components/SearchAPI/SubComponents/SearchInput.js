@@ -1,30 +1,29 @@
-
-
 import React from 'react';
 
 class SearchInput extends React.Component {
 
     render() {
         const { props } = this;
+        const { firstName, lastName } = props;
         return (
             <div className="search-input-compoent">
-                <div className="col-xs-8 col-xs-offset-2">
-                    <div className="input-group">
-                        <div className="form-group">                            
-                            <select className="form-control" id="exampleSelect1" onChange={props.onChangeHandle}>
-                                <option value=''>Filter by</option>
-                                <option value='first_name'>First Name</option>
-                                <option value='last_name'>Last Name</option>                                
-                            </select>
+                <div className="mx-auto my-0">
+                    <form className="form-inline">
+                        {/* First Name Input*/}
+                        <div className="col-5">
+                            <input id="first_name" value={props.firstName} type="text" className="form-control" name="x" placeholder="First Name..." onChange={(e) => props.handleInputChange(e, 'firstName')} />
                         </div>
-                        <input id="myInput" value={props.value} type="text" className="form-control" name="x" placeholder="Search term..." onChange={props.handleInputChange} />
-                        <span className="input-group-prepend">
-                            <button className="btn btn-outline-secondary" onClick={props.handleClick} type="button"><i className="fas fa-search"></i></button>
-                        </span>
-                    </div>
+                        {/* Last Name Input*/}
+                        <div className="col-5">
+                            <input id="last_name" value={props.lastName} type="text" className="form-control" name="x" placeholder="Last Name..." onChange={(e) => props.handleInputChange(e, 'lastName')} />
+                        </div>
+                        {/* Search Button */}
+                        <div className="col-2">
+                            <button className="btn btn-outline-secondary" onClick={props.handleClick} type="button">Search</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-
         );
     }
 }

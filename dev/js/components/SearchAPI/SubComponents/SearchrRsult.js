@@ -28,7 +28,8 @@ class SearchrRsult extends React.Component {
             }).map((items, index) => (<tr key={index}>                            
                             <th className="">{items.list_no}</th>
                             <th className="">{items.exam_no}</th>
-                            <th className="">{items.first_name} {items.last_name}</th>                            
+                            <th className="">{items.first_name} </th>
+                            <th className="">{items.last_name}</th>                            
                             <th className="">{items.list_agency_desc}</th>
                             <th className="">{items.list_title_desc}</th>
                             <th className="">{items.published_date}</th>
@@ -36,12 +37,13 @@ class SearchrRsult extends React.Component {
         };
         return (
            <div className="table-responsive">
-            <table id="myTable" className="table table-bordered search-rsult">
-                <thead>
+            <table id="myTable" className="table table-bordered table-striped search-rsult">
+                <thead className="thead-dark">
                     <tr>
                         <th scope="col">List No</th>
                         <th scope="col">Exam No</th>
-                        <th scope="col">Full Name</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
                         <th scope="col">List Agency </th>
                         <th scope="col">List Title</th>
                         <th scope="col">Published Date</th>                        

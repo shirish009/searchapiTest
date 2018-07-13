@@ -22,3 +22,21 @@
 		border-radius: 0px;
 	}
 }
+.table-bordered th{
+	font-size: 12px;
+	font-weight: 500;
+}
+.btn,.form-control{
+	width: 100% !important;
+}
+
+.list-group-item{
+	button{
+		float: right;
+		background-color: transparent;
+		border: none;
+		color: red;
+		font-weight: 800;
+		font-size: 26px;
+	}
+}
