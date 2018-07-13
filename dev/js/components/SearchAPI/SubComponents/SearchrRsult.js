@@ -6,38 +6,22 @@ class SearchrRsult extends React.Component {
 
     render() {
         const { props } = this;
-        const {value, currentFilter, data = []} = props;
+        const { data = []} = props;
         {/* Data Filter */}
         const getParsedData = (data) => {
-            return data.filter(item => {
-                if ((!value || value === '')) {
-                    return true;
-                } else {
-                    if (currentFilter) {
-                        const itemValue = item[currentFilter];
-                        const lowerValue = value.toLowerCase();
-                        if (itemValue && itemValue.toLowerCase().indexOf(lowerValue) !== -1) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    } else {
-                        return true;
-                    }
-                } 
-            }).map((items, index) => (<tr key={index}>                            
-                            <th className="">{items.list_no}</th>
-                            <th className="">{items.exam_no}</th>
-                            <th className="">{items.first_name} </th>
-                            <th className="">{items.last_name}</th>                            
-                            <th className="">{items.list_agency_desc}</th>
-                            <th className="">{items.list_title_desc}</th>
-                            <th className="">{items.published_date}</th>
+            return data.map((items, index) => (<tr key={index}>                            
+                            <td>{items.list_no}</td>
+                            <td>{items.exam_no}</td>
+                            <td>{items.first_name} </td>
+                            <td>{items.last_name}</td>                            
+                            <td>{items.list_agency_desc}</td>
+                            <td>{items.list_title_desc}</td>
+                            <td>{items.published_date}</td>
                         </tr>));
         };
         return (
            <div className="table-responsive">
-            <table id="myTable" className="table table-bordered table-striped search-rsult">
+            <table id="myTable" className="table table-bordered table-striped search-result">
                 <thead className="thead-dark">
                     <tr>
                         <th scope="col">List No</th>

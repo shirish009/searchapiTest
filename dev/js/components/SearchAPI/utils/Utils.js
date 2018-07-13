@@ -1,16 +1,10 @@
 
 const Utils = {
-    getResponseFromApi(url, method, beforeStartCallback, progressCallback, endedCallback, dataCallBack, handleAbortAction) {
+    getResponseFromApi(url, method, beforeStartCallback, dataCallBack) {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url, true);
-        xhr.onprogress = (e) => progressCallback(e); 
-        
         xhr.onloadstart = (e) => beforeStartCallback(e);
         
-        xhr.onloadend = (e) => endedCallback(e);
-
-        xhr.onabort = (e) => handleAbortAction(e);
-
         xhr.onreadystatechange = () => {
             if(xhr.readyState === 4 && xhr.status === 200) {
                 const data = xhr.responseText ;

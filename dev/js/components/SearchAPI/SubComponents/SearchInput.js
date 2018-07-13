@@ -6,7 +6,7 @@ class SearchInput extends React.Component {
         const { props } = this;
         const { firstName, lastName } = props;
         return (
-            <div className="search-input-compoent">
+            <div className="search-input-component float-left w-100 my-4 mt-4">
                 <div className="mx-auto my-0">
                     <form className="form-inline">
                         {/* First Name Input*/}
